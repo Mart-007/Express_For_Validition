@@ -1,0 +1,22 @@
+<%- include ('./partials/header.ejs') %>
+    <h1><%= title %></h1>
+    
+    <h1>Form</h1>
+    <form action="/users/add" method="post">
+        <label for="lastName">First Name</label><br>
+        <input type="text" name="first_name" class="firstName"><br><br>
+        <label for="lastName">Last Name</label><br>
+        <input type="text" name="last_name" class="lastName"><br><br>
+        <label for="email">Email</label><br>
+        <input type="text" name="email" class="email"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <% for(var i in users){%>
+        <h2>
+            Name: <%= users[i].first_name%>
+            <%= users[i].last_name %><br>
+            Email: <%= users[i].email %>
+        </h2>
+    <% } %>
+<%- include ('./partials/footer.ejs') %>
