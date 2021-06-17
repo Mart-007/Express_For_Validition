@@ -1,1 +1,11 @@
 node_modules
+
+<h1><%= title %></h1>
+
+ <!-- <% for(var i in users){%>
+        <h2>
+            Name: <%= users[i].first_name%>
+            <%= users[i].last_name %><br>
+            Email: <%= users[i].email %>
+        </h2>
+    <% } %> -->

@@ -1,22 +1,32 @@
 <%- include ('./partials/header.ejs') %>
-    <h1><%= title %></h1>
-    
+
+    <% if(typeof alert != 'undefined'){ %>
+        <% alert.forEach(function(error){ %>
+            <div class="alert alert-warning alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <p><%= error.msg %></p>
+              </div>
+    <% }) %>
+    <% } %>
+
     <h1>Form</h1>
-    <form action="/users/add" method="post">
+    <form action="/register" method="post" style="background-color: #121212; color: #fff; margin-left: 25em; padding: 5rem; width: 30%;">
         <label for="lastName">First Name</label><br>
-        <input type="text" name="first_name" class="firstName"><br><br>
+        <input type="text" name="firstname" class="firstname" <br><br>
         <label for="lastName">Last Name</label><br>
-        <input type="text" name="last_name" class="lastName"><br><br>
+        <input type="text" name="lastname" class="lastname" ><br><br>
         <label for="email">Email</label><br>
-        <input type="text" name="email" class="email"><br><br>
-        <input type="submit" value="Submit">
+        <input type="text" name="email" class="email" ><br><br>
+        <input type="submit" value="Submit" class="btn">
     </form>
 
-    <% for(var i in users){%>
-        <h2>
-            Name: <%= users[i].first_name%>
-            <%= users[i].last_name %><br>
-            Email: <%= users[i].email %>
-        </h2>
-    <% } %>
+    <div class="data">
+        <% for(let i in users){%>
+            <h4>
+                Name: <%= users[i].first_name%>
+                <%= users[i].last_name %><br>
+                Email: <%= users[i].email %> <a href="#" class="deleteUser" data-id="<%=users._id%>">Delete</a>  
+            </h4>   
+        <% } %>
+    </div>
 <%- include ('./partials/footer.ejs') %>

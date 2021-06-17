@@ -1,0 +1,7 @@
+body{
+    background-color: #1212;
+}
+
+.firstname, .lastname, .email, .btn{
+    color: #121212;
+}
